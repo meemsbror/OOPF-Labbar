@@ -181,7 +181,12 @@ public class SnakeModel extends GameModel {
 
 		setGameboardState(this.snakePos.peekLast(), BODY_TILE);
 
+		if (this.snakePos.contains(getNextCollectorPos())) {
+			throw new GameOverException(this.score);
+		}
+
 		this.snakePos.add(getNextCollectorPos());
+
 
 		if (isOutOfBounds(this.snakePos.peekLast())) {
 			throw new GameOverException(this.score);
@@ -198,7 +203,7 @@ public class SnakeModel extends GameModel {
 		}
 
 		setGameboardState(this.snakePos.peekLast(), HEAD_TILE);
-		
+
 	}
 
 	/**
