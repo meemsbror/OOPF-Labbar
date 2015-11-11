@@ -8,15 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Sample game for illustration. Intentionally stupid; more interesting
- * games to be provided by students.
- * <p>
- * Initially 20 gold coins are randomly placed in the matrix. The red gold
- * collector aims to collect these coins which disappear after collection. Each
- * coin is randomly moved to a new position every n moves, where n is the number
- * of remaining coins. The game is won when all coins are collected and lost when
- * collector leaves game board.
- */
+* Classic Snake Game, when you eat a coin you get bigger, if you hit the edge or eat yourself you loose.
+*/
 public class SnakeModel extends GameModel {
 	public enum Directions {
 		EAST(1, 0),
@@ -56,17 +49,18 @@ public class SnakeModel extends GameModel {
 			0),
 			new Color(255, 255, 0), 2.0);
 
-	/** Graphical representation of the collector */
+	/** Graphical representation of the snakes body */
 	private static final GameTile BODY_TILE = new RectangularTile(Color.BLACK);
 
 
+	/** Graphical representation of the snakes head */
 	private static final GameTile HEAD_TILE = new RectangularTile(Color.RED);
 
 
 	/** Graphical representation of a blank tile. */
 	private static final GameTile BLANK_TILE = new GameTile();
 
-	/** A list containing the positions of all coins. */
+	/** . */
 	private final ArrayDeque<Position> snakePos = new ArrayDeque<>(100);
 
 	/** The position of the collector. */
