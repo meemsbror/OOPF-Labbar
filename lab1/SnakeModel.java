@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-* Classic Snake Game, when you eat a coin you get bigger, if you hit the edge or eat yourself you loose.
+* Classic Snake Game, when you eat a coin you get bigger, if you hit the edge or eat yourself you lose.
 */
 public class SnakeModel extends GameModel {
 	public enum Directions {
@@ -40,7 +40,7 @@ public class SnakeModel extends GameModel {
 	/*
 	 * The following GameTile objects are used only
 	 * to describe how to paint the specified item.
-	 * 
+	 *
 	 * This means that they should only be used in
 	 * conjunction with the get/setGameboardState()
 	 * methods.
@@ -51,24 +51,24 @@ public class SnakeModel extends GameModel {
 			0),
 			new Color(255, 255, 0), 2.0);
 
-	/** Graphical representation of the snakes body */
+	/** Graphical representation of the snake's body */
 	private static final GameTile BODY_TILE = new RectangularTile(Color.BLACK);
 
 
-	/** Graphical representation of the snakes head */
-	private static final GameTile HEAD_TILE = new RectangularTile(Color.RED);
+	/** Graphical representation of the snake's head */
+	private static final GameTile HEAD_TILE = new SnakeHeadTile();
 
 
 	/** Graphical representation of a blank tile. */
 	private static final GameTile BLANK_TILE = new GameTile();
 
-	/** . */
+	/** ArrayDequeu used to keep track of the snake's position. */
 	private final ArrayDeque<Position> snakePos = new ArrayDeque<>(100);
 
-	/** The position of the collector. */
+	/** The position of the coin. */
 	private Position coinPosition;
 
-	/** The direction of the collector. */
+	/** The direction of the snake. */
 	private Directions direction = Directions.NORTH;
 
 	/** The number of coins found. */
@@ -106,8 +106,8 @@ public class SnakeModel extends GameModel {
 	}
 
 
-	//WIP
-	public static void playSound() {
+	//TODO: WIP
+	public void playSound() {
 
 		try {
 			File yourFile;
@@ -160,7 +160,7 @@ public class SnakeModel extends GameModel {
 	}
 
 	/**
-	 * Update the direction of the collector
+	 * Update the direction of the snake
 	 * according to the user's keypress.
 	 */
 	private void updateDirection(final int key) {
@@ -192,7 +192,7 @@ public class SnakeModel extends GameModel {
 	}
 
 	/**
-	 * Get next position of the collector.
+	 * Get next position of the Snake.
 	 */
 	private Position getNextHeadPos() {
 		return new Position(

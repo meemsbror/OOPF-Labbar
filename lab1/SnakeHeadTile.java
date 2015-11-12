@@ -1,37 +1,31 @@
 package lab1;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-
+import java.awt.*;
 
 /**
- * A rectangular tile manages painting of a
- * filled rectangle in a specified area of the screen.
- * 
+ * A rectangular tile used to represent the snake's head.
+ * Always red.
+ *
  * Whenever the object should paint itself,
  * it is told what size and position that
  * should be used to paint it.
  */
-public class RectangularTile extends GameTile {
+public class SnakeHeadTile extends GameTile {
 
 	/** The color of the rectangle */
 	private final Color color;
 
-
 	/**
-	 * Creates a rectangular game tile.
-	 *
-	 * @param color
-	 *            the color of the rectangle.
-	 */
-	public RectangularTile(final Color color) {
-		this.color = color;
+	 * Creates a rectangular snake head.
+	*/
+	 public SnakeHeadTile() {
+		this.color = Color.RED;
 	}
+
 
 	/**
 	 * Draws itself in a given graphics context, position and size.
-	 * 
+	 *
 	 * @param g
 	 *            graphics context to draw on.
 	 * @param x
@@ -41,10 +35,12 @@ public class RectangularTile extends GameTile {
 	 * @param d
 	 *            size of this object in pixels.
 	 */
+
 	@Override
 	public void draw(final Graphics g, final int x, final int y,
-			final Dimension d) {
+	                 final Dimension d) {
 		g.setColor(this.color);
 		g.fillRect(x, y, d.width, d.height);
 	}
+
 }
