@@ -74,10 +74,12 @@ public class SnakeModel extends GameModel {
 	/** The number of coins found. */
 	private int score;
 
+	//*BEEP* *BEEP*
 	private boolean truckMode; //TODO
 
 	private boolean isReversing;
-
+	
+	Clip clip;
 	/**
 	 * Create a new model for the gold game.
 	 */
@@ -104,7 +106,7 @@ public class SnakeModel extends GameModel {
 	}
 
 
-
+	//WIP
 	public static void playSound() {
 
 		try {
@@ -112,7 +114,6 @@ public class SnakeModel extends GameModel {
 			AudioInputStream stream;
 			AudioFormat format;
 			DataLine.Info info;
-			Clip clip;
 
 			stream = AudioSystem.getAudioInputStream(new File("/home/john/Desktop/ding.wav"));
 			format = stream.getFormat();
@@ -237,6 +238,11 @@ public class SnakeModel extends GameModel {
 
 	}
 
+	public void truckUpdate (final int lastKey){
+		
+			
+
+	}
 	/**
 	 *
 	 * @param pos The position to test.
