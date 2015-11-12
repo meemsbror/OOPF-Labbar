@@ -1,6 +1,8 @@
 package lab1;
 
+import javax.sound.sampled.*;
 import javax.swing.JFrame;
+import java.io.File;
 
 /**
  * This class creates an AWT window which will contain the game.

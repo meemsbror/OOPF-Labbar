@@ -1,8 +1,10 @@
 package lab1;
 
+import javax.sound.sampled.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,11 +80,19 @@ public class SnakeModel extends GameModel {
 	/** The number of coins found. */
 	private int score;
 
+	private boolean truckMode; //TODO
+
+	private boolean isReversing;
+
 	/**
 	 * Create a new model for the gold game.
 	 */
 	public SnakeModel() {
 		Dimension size = getGameboardSize();
+
+		truckMode = true; //TODO
+
+		playSound();
 
 		// Blank out the whole gameboard
 		for (int i = 0; i < size.width; i++) {
@@ -98,6 +108,33 @@ public class SnakeModel extends GameModel {
 		// Insert a coin into the gameboard.
 		addCoin();
 	}
+
+
+
+	public static void playSound() {
+
+		try {
+			File yourFile;
+			AudioInputStream stream;
+			AudioFormat format;
+			DataLine.Info info;
+			Clip clip;
+
+			stream = AudioSystem.getAudioInputStream(new File("/home/john/Desktop/ding.wav"));
+			format = stream.getFormat();
+			info = new DataLine.Info(Clip.class, format);
+			clip = (Clip) AudioSystem.getLine(info);
+			clip.open(stream);
+			clip.loop(10);
+		}
+		catch (Exception e) {
+			//whatevers
+		}
+
+	}
+
+
+
 
 	/**
 	 * Insert another coin into the gameboard.
