@@ -122,7 +122,7 @@ public class SnakeModel extends GameModel {
 			clip.loop(10);
 		}
 		catch (Exception e) {
-			//whatevers
+
 		}
 
 	}
@@ -165,7 +165,7 @@ public class SnakeModel extends GameModel {
 	private void updateDirection(final int key) {
 		switch (key) {
 			case KeyEvent.VK_LEFT:
-				if (direction != Directions.EAST || this.snakePos.size() == 1) {
+				if (direction != Directions.EAST || this.snakePos.size() == 1 || truckMode) {
 					this.direction = Directions.WEST;
 				}
 				break;
@@ -193,7 +193,7 @@ public class SnakeModel extends GameModel {
 	/**
 	 * Get next position of the collector.
 	 */
-	private Position getNextCollectorPos() {
+	private Position getNextHeadPos() {
 		return new Position(
 				this.snakePos.peekLast().getX() + this.direction.getXDelta(),
 				this.snakePos.peekLast().getY() + this.direction.getYDelta());
@@ -206,17 +206,18 @@ public class SnakeModel extends GameModel {
 	 * @param lastKey
 	 *            The most recent keystroke.
 	 */
+
 	@Override
 	public void gameUpdate(final int lastKey) throws GameOverException {
 		updateDirection(lastKey);
 
 		setGameboardState(this.snakePos.peekLast(), BODY_TILE);
 
-		if (this.snakePos.contains(getNextCollectorPos())) {
+		if (this.snakePos.contains(getNextHeadPos())) {
 			throw new GameOverException(this.score);
 		}
 
-		this.snakePos.add(getNextCollectorPos());
+		this.snakePos.add(getNextHeadPos());
 
 
 		if (isOutOfBounds(this.snakePos.peekLast())) {
