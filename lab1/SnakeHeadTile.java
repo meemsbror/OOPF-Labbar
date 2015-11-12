@@ -1,5 +1,7 @@
 package lab1;
 
+//Grupp 2. Frej Karlsson och John Andersson
+
 import java.awt.*;
 
 /**

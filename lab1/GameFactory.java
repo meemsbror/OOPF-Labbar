@@ -1,5 +1,7 @@
 package lab1;
 
+//Grupp 2. Frej Karlsson och John Andersson
+
 /**
  * Factory class for available games.
  */
@@ -7,7 +9,7 @@ public class GameFactory implements IGameFactory {
 
 	/**
 	 * Returns an array with names of games this factory can create. Used by GUI
-	 * list availible games.
+	 * list available games.
 	 */
 	@Override
 	public String[] getGameNames() {
