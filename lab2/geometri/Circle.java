@@ -7,7 +7,6 @@ public class Circle implements GeometricalForm{
 	private int x,y,diameter;
 	private Color color;
 
-
 	/**
 	 * Creates a circle.
 	 * @param x the x position.
@@ -60,7 +59,6 @@ public class Circle implements GeometricalForm{
 
     public void place(int x, int y) throws IllegalPositionException{
 	}
-
 
 	@Override
 	public boolean equals(Object o){
