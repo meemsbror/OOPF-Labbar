@@ -7,10 +7,23 @@ public class Circle implements GeometricalForm{
 	
 	private int x,y,diameter;
 	private Color color;
-	
-	public Circle(int x, int y, int d,Color c){
+
+	/**
+	 *
+	 * @param x
+	 * @param y
+	 * @param d
+     * @param c
+     */
+	public Circle(int x, int y, int d,Color c)throws IllegalPositionException{
 	}
 
+	/**
+	 *
+	 * @param f
+	 * @param d
+     * @param c
+     */
 	public Circle(GeometricalForm f, int d, Color c){
 	}
 
@@ -48,10 +61,6 @@ public class Circle implements GeometricalForm{
     public void place(int x, int y) throws IllegalPositionException{
 	}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 8a9acd057b2b049e3ffd2885f2650c409962c746
 	@Override
 	public boolean equals(Object o){
 		return false;
