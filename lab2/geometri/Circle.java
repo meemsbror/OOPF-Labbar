@@ -15,7 +15,7 @@ public class Circle implements GeometricalForm{
 	}
 
 	@Override
-	public int compareTo(GeometricalForm g) {
+	public int compareTo(GeometricalForm f) {
 		return 0;
 	}
 	public void fill(Graphics g){
@@ -45,29 +45,14 @@ public class Circle implements GeometricalForm{
     public void move(int dx, int dy) throws IllegalPositionException{
 	}
 
-	/**
-	 *
-	 * @param x
-	 * @param y
-	 * @throws IllegalPositionException
-	 */
     public void place(int x, int y) throws IllegalPositionException{
 	}
 
-	/**
-	 * Indicates whether some other object is "equal to" this one, sharing all attributes except for position.
-	 * @param o object to compare.
-	 * @return
-	 */
 	@Override
 	public boolean equals(Object o){
 		return false;
 	}
 
-	/**
-	 * Returns a hash code value for the object.
-	 * @return a hash code value for this object.
-	 */
 	@Override
 	public int hashCode(){
 		return 0;
