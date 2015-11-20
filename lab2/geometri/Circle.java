@@ -1,16 +1,29 @@
 package geometri;
 
 import java.awt.*;
-import java.util.Objects;
 
 public class Circle implements GeometricalForm{
 	
 	private int x,y,diameter;
 	private Color color;
-	
+
+
+	/**
+	 * Creates a circle.
+	 * @param x the x position.
+	 * @param y the y position.
+	 * @param d the diameter.
+	 * @param c the color.
+	 */
 	public Circle(int x, int y, int d,Color c){
 	}
 
+	/**
+	 * Creates a circle at the position of the specified GeometricalForm.
+	 * @param f the GeometricalForm used for getting the position.
+	 * @param d the diameter.
+	 * @param c the color.
+	 */
 	public Circle(GeometricalForm f, int d, Color c){
 	}
 
@@ -48,10 +61,7 @@ public class Circle implements GeometricalForm{
     public void place(int x, int y) throws IllegalPositionException{
 	}
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 8a9acd057b2b049e3ffd2885f2650c409962c746
 	@Override
 	public boolean equals(Object o){
 		return false;
