@@ -48,6 +48,10 @@ public class Circle implements GeometricalForm{
     public void place(int x, int y) throws IllegalPositionException{
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8a9acd057b2b049e3ffd2885f2650c409962c746
 	@Override
 	public boolean equals(Object o){
 		return false;
