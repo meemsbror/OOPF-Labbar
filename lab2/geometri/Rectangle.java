@@ -15,10 +15,8 @@ public class Rectangle extends AbstractGeometricalForm {
      * @param height the height
      * @param c the color of the Rectangle
      */
-    public Rectangle(int x, int y, int width, int height, Color c){
-
+    public Rectangle(int x, int y, int width, int height, Color c) throws IllegalPositionException{
 	    super(x, y, width, height, c);
-
     }
 
     /**
@@ -37,11 +35,12 @@ public class Rectangle extends AbstractGeometricalForm {
         return(2*getWidth()+2*getHeight());
     }
 
-
-
-
 	public int getArea() {
 		return getHeight() * getWidth();
 	}
+
+    public void fill(Graphics g){
+
+    }
 
 }

@@ -25,9 +25,8 @@ public class Oval extends AbstractGeometricalForm {
 	 * @param c the color.
 	 */
     public Oval(GeometricalForm f, int width, int height, Color c){
-        this()
+        super(f,width,height,c);
     }
-
 
     public int getPerimeter(){
         return Math.round(Math.round((Math.PI/2.0)*Math.sqrt(2*getHeight()*getHeight()+2*getWidth()+getWidth())));
@@ -36,5 +35,9 @@ public class Oval extends AbstractGeometricalForm {
 	public int getArea() {
 		return Math.round(Math.round(getWidth() * getHeight() * Math.PI));
 	}
+
+    public void fill(Graphics g){
+
+    }
 
 }
