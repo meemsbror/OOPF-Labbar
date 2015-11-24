@@ -3,9 +3,9 @@ package geometri;
 import java.awt.*;
 import java.util.Objects;
 
-public class Rectangle implements GeometricalForm{
+public class Rectangle extends AbstractGeometricalForm {
 
-    private int x,y,width,height;
+		private int x,y,width,height;
     private Color color;
 
     /**
@@ -39,47 +39,4 @@ public class Rectangle implements GeometricalForm{
         }
     }
 
-    @Override
-    public int compareTo(GeometricalForm f) {
-        return 0;
-    }
-    public void fill(Graphics g){
-        g.drawOval(x,y,width,height);
-    }
-    public Color getColor(){
-        return color;
-    }
-    public int getArea(){
-        return width*height; 
-    }
-    public int getHeight(){
-        return height;
-    }
-    public int getPerimeter(){
-        return 2*width+2*height;
-    }
-    public int getWidth(){
-        return width;
-    }
-    public int getX(){
-        return 0;
-    }
-    public int getY(){
-        return 0;
-    }
-    public void move(int dx, int dy) throws IllegalPositionException{
-    }
-
-    public void place(int x, int y) throws IllegalPositionException{
-    }
-
-    @Override
-    public boolean equals(Object o){
-        return false;
-    }
-
-    @Override
-    public int hashCode(){
-        return 0;
-    }
 }
