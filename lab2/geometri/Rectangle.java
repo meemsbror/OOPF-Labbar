@@ -5,8 +5,7 @@ import java.util.Objects;
 
 public class Rectangle extends AbstractGeometricalForm {
 
-		private int x,y,width,height;
-    private Color color;
+
 
     /**
      *Creates a Square at the specified position with the specified width and height.
@@ -17,11 +16,7 @@ public class Rectangle extends AbstractGeometricalForm {
      * @param c the color of the Rectangle
      */
     public Rectangle(int x, int y, int width, int height, Color c)throws IllegalPositionException{
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
-        this.color = c;
+	    super()
     }
 
     /**
@@ -32,11 +27,11 @@ public class Rectangle extends AbstractGeometricalForm {
      * @param c the color of the Square.
      */
     public Rectangle(GeometricalForm f,int width,int height, Color c){
-        try {
-            this(f.getX(), f.getY(), width, height, c);
-        }catch (IllegalPositionException e1){
 
-        }
+            this(f.getX(), f.getY(), width, height, c);
+
+
+
     }
 
 }
