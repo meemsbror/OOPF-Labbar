@@ -49,13 +49,11 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
 
     }
 
-    @Override
-    public boolean equals(Object o){
-        return false;
-    }
+	@Override
+	public boolean equals(Object o) {
+	}
 
-    @Override
-    public int hashCode(){
-        return 0;
-    }
+	@Override
+	public int hashCode() {
+	}
 }

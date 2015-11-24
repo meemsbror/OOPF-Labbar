@@ -5,8 +5,6 @@ import java.util.Objects;
 
 public class Point extends AbstractGeometricalForm {
 
-    private int x,y;
-    private Color color;
 
     /**
      *
