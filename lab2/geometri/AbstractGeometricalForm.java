@@ -4,14 +4,15 @@ package geometri;
 import java.awt.*;
 
 public abstract class AbstractGeometricalForm implements GeometricalForm{
-    int x,y,width,height,area;
+    final private int x,y,width,height;
+    final private Color color;
 
-    public AbstractGeometricalForm(int x, int y, int width, int height, int area){
+    public AbstractGeometricalForm(int x, int y, int width, int height, Color c){
         this.x=x;
         this.y=y;
         this.width=width;
         this.height=height;
-        this.area=area;
+        this.color = c;
     }
 
     @Override
@@ -22,23 +23,19 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
     public Color getColor(){
         return Color.red;
     }
-    public int getArea(){
-        return 0;
-    }
+    public abstract int getArea();
     public int getHeight(){
-        return 0;
+        return height;
     }
-    public int getPerimeter(){
-        return 0;
-    }
+    public abstract int getPerimeter();
     public int getWidth(){
-        return 0;
+        return width;
     }
     public int getX(){
-        return 0;
+        return x;
     }
     public int getY(){
-        return 0;
+        return y;
     }
     public void move(int dx, int dy) throws IllegalPositionException{
     }
