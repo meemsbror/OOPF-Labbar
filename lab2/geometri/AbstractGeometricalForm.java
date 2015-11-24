@@ -4,14 +4,22 @@ package geometri;
 import java.awt.*;
 
 public abstract class AbstractGeometricalForm implements GeometricalForm{
+    int x,y,width,height,area;
+
+    public AbstractGeometricalForm(int x, int y, int width, int height, int area){
+        this.x=x;
+        this.y=y;
+        this.width=width;
+        this.height=height;
+        this.area=area;
+    }
+
     @Override
     public int compareTo(GeometricalForm f) {
         return 0;
     }
-    public void fill(Graphics g){
-    }
+    public abstract void fill(Graphics g);
     public Color getColor(){
-
         return Color.red;
     }
     public int getArea(){
@@ -48,7 +56,7 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
         return 0;
     }
 }
-}
+
 
 /*
 @Override
