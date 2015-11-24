@@ -3,10 +3,7 @@ package geometri;
 import java.awt.*;
 import java.util.Objects;
 
-public class Square extends AbstractGeometricalForm {
-
-    private int x,y,side;
-    private Color color;
+public class Square extends Rectangle {
 
     /**
      *Creates a Square at the specified position with the specified width and height.
@@ -17,7 +14,7 @@ public class Square extends AbstractGeometricalForm {
      * @throws IllegalPositionException
      */
     public Square(int x, int y, int side, Color c) throws IllegalPositionException{
-
+        super(x,y,side,side,c);
     }
 
     /**
@@ -27,6 +24,7 @@ public class Square extends AbstractGeometricalForm {
      * @param c the color of the Square.
      */
     public Square(GeometricalForm f, int side, Color c){
+        this(f.getX(),f.getY(),side,c);
     }
 
 

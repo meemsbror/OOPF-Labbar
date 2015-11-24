@@ -29,10 +29,13 @@ public class Rectangle extends AbstractGeometricalForm {
      */
     public Rectangle(GeometricalForm f,int width,int height, Color c){
 
-            this(f.getX(), f.getY(), width, height, c);
-
-
-
+        super(f, width, height, c);
     }
+
+    public int getPerimeter(){
+        return(2*getWidth()+2*getHeight());
+    }
+
+
 
 }

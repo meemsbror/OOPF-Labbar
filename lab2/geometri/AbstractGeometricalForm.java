@@ -15,7 +15,11 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
         this.color = c;
     }
 
-    @Override
+    public AbstractGeometricalForm(GeometricalForm f, int width, int height, Color c) {
+        this(f.getX(),f.getY(),width,height,c);
+    }
+
+        @Override
     public int compareTo(GeometricalForm f) {
         return 0;
     }

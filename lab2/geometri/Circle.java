@@ -2,10 +2,7 @@ package geometri;
 
 import java.awt.*;
 
-public class Circle extends AbstractGeometricalForm {
-	
-	private int x,y,diameter;
-	private Color color;
+public class Circle extends Oval {
 
 	/**
 	 * Creates a circle.
@@ -15,6 +12,7 @@ public class Circle extends AbstractGeometricalForm {
 	 * @param c the color.
 	 */
 	public Circle(int x, int y, int d,Color c){
+		super(x,y,d,d,c);
 	}
 
 	/**
