@@ -27,5 +27,8 @@ public class Square extends Rectangle {
         this(f.getX(),f.getY(),side,c);
     }
 
+	public int getArea() {
+		return getHeight() * getWidth();
+	}
 
 }

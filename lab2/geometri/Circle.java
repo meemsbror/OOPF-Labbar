@@ -24,5 +24,8 @@ public class Circle extends Oval {
 	public Circle(GeometricalForm f, int d, Color c){
 	}
 
+	public int getArea() {
+		return Math.round(Math.round(Math.pow((getWidth() / 2), 2) * Math.PI));
+	}
 
 }

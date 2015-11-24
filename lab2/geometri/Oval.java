@@ -33,5 +33,8 @@ public class Oval extends AbstractGeometricalForm {
         return Math.round(Math.round((Math.PI/2.0)*Math.sqrt(2*getHeight()*getHeight()+2*getWidth()+getWidth())));
     }
 
+	public int getArea() {
+		return Math.round(Math.round(getWidth() * getHeight() * Math.PI));
+	}
 
 }

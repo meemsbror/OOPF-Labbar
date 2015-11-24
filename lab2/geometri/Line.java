@@ -27,4 +27,8 @@ public class Line extends AbstractGeometricalForm  {
 	public Line(GeometricalForm f1, GeometricalForm f2, Color c){}
 
 
+	public int getArea() {
+		return 0;
+	}
+
 }
