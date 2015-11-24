@@ -3,10 +3,7 @@ package geometri;
 import java.awt.*;
 import java.util.Objects;
 
-public class Point extends AbstractGeometricalForm {
-
-    private int x,y;
-    private Color color;
+public class Point extends Line {
 
     /**
      *
@@ -15,6 +12,7 @@ public class Point extends AbstractGeometricalForm {
      * @param c the color of the point
      */
     public Point(int x, int y,Color c)throws IllegalPositionException{
+        super(x,y,x,y,c);
     }
 
     /**
@@ -22,15 +20,7 @@ public class Point extends AbstractGeometricalForm {
      * @param f a geometrical form
      * @param c the color of the point
      */
-    public Point(GeometricalForm f, Color c){
+    public Point(AbstractGeometricalForm f, Color c){
+        super(f,f,c);
     }
-
-	public int getArea() {
-		return 0;
-	}
-
-    public void fill(Graphics g){
-
-    }
-
 }

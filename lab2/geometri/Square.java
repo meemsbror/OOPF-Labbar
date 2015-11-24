@@ -31,4 +31,14 @@ public class Square extends Rectangle {
 		return getHeight() * getWidth();
 	}
 
+    @Override
+    public boolean equals(Object o){
+
+    }
+
+    @Override
+    public int hashCode(){
+
+    }
+
 }

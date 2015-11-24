@@ -24,7 +24,7 @@ public class Oval extends AbstractGeometricalForm {
 	 * @param height the height.
 	 * @param c the color.
 	 */
-    public Oval(GeometricalForm f, int width, int height, Color c){
+    public Oval(AbstractGeometricalForm f, int width, int height, Color c){
         super(f,width,height,c);
     }
 
