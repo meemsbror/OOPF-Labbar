@@ -25,5 +25,8 @@ public class Point extends AbstractGeometricalForm {
     public Point(GeometricalForm f, Color c){
     }
 
+	public int getArea() {
+		return 0;
+	}
 
 }

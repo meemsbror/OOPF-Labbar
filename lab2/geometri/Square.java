@@ -29,5 +29,8 @@ public class Square extends AbstractGeometricalForm {
     public Square(GeometricalForm f, int side, Color c){
     }
 
+	public int getArea() {
+		return getHeight() * getWidth();
+	}
 
 }

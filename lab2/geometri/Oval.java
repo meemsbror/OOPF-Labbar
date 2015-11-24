@@ -25,6 +25,10 @@ public class Oval extends AbstractGeometricalForm {
 	 * @param height the height.
 	 * @param c the color.
 	 */
+	public Oval(GeometricalForm f, int width, int height, Color c){}
 
+	public int getArea() {
+		return Math.round(Math.round(getWidth() * getHeight() * Math.PI));
+	}
 
 }
