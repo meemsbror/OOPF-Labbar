@@ -4,9 +4,6 @@ import java.awt.*;
 import java.util.Objects;
 
 
-public class Point extends AbstractGeometricalForm {
-
-
 public class Point extends Line {
 
 

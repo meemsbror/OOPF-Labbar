@@ -72,13 +72,4 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
     public void place(int x, int y) throws IllegalPositionException{
 
     }
-
-	@Override
-	public boolean equals(Object o) {
-	}
-
-	@Override
-	public int hashCode() {
-	}
-
 }
