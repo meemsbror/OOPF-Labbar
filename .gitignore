@@ -12,3 +12,6 @@
 hs_err_pid*
 
 .idea/
+#Skit
+/lab2/.idea/
+/lab2/lab2.iml
