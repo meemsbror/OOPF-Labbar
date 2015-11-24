@@ -16,7 +16,12 @@ public class Rectangle extends AbstractGeometricalForm {
      * @param height the height
      * @param c the color of the Rectangle
      */
-    public Rectangle(int x, int y,int width, int height,Color c)throws IllegalPositionException{
+    public Rectangle(int x, int y, int width, int height, Color c)throws IllegalPositionException{
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.color = c;
     }
 
     /**
@@ -26,7 +31,12 @@ public class Rectangle extends AbstractGeometricalForm {
      * @param height the height
      * @param c the color of the Square.
      */
-    Rectangle(GeometricalForm f,int width,int height, Color c){
+    public Rectangle(GeometricalForm f,int width,int height, Color c){
+        try {
+            this(f.getX(), f.getY(), width, height, c);
+        }catch (IllegalPositionException e1){
+
+        }
     }
 
 }
