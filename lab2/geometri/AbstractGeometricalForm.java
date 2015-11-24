@@ -4,10 +4,11 @@ package geometri;
 import java.awt.*;
 
 public abstract class AbstractGeometricalForm implements GeometricalForm{
-    final private int x,y,width,height;
+    private int x,y;
+    final private int width,height;
     final private Color color;
 
-    public AbstractGeometricalForm(int x, int y, int width, int height, Color c) throws IllegalPositionException{
+    public AbstractGeometricalForm(int x, int y, int width, int height, Color c){
 	    this.x=x;
         this.y=y;
         this.width=width;
@@ -16,7 +17,7 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
 
     }
 
-    public AbstractGeometricalForm(GeometricalForm f, int width, int height, Color c) {
+    public AbstractGeometricalForm(AbstractGeometricalForm f, int width, int height, Color c) {
         this(f.getX(),f.getY(),width,height,c);
     }
 
@@ -33,7 +34,30 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
         return height;
     }
     public abstract int getPerimeter();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        AbstractGeometricalForm that = (AbstractGeometricalForm) o;
+
+        if (getWidth() != that.getWidth()) return false;
+        if (getHeight() != that.getHeight()) return false;
+        return getColor().equals(that.getColor());
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getWidth();
+        result = 31 * result + getHeight();
+        result = 31 * result + getColor().hashCode();
+        return result;
+    }
+
     public int getWidth(){
+
         return width;
     }
     public int getX(){
@@ -56,4 +80,5 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
 	@Override
 	public int hashCode() {
 	}
+
 }

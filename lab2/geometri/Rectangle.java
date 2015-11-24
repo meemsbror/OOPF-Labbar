@@ -26,7 +26,7 @@ public class Rectangle extends AbstractGeometricalForm {
      * @param height the height
      * @param c the color of the Square.
      */
-    public Rectangle(GeometricalForm f,int width,int height, Color c){
+    public Rectangle(AbstractGeometricalForm f,int width,int height, Color c){
 
         super(f, width, height, c);
     }
@@ -42,5 +42,6 @@ public class Rectangle extends AbstractGeometricalForm {
     public void fill(Graphics g){
 
     }
+
 
 }

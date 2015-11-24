@@ -4,8 +4,7 @@ import java.awt.*;
 
 public class Line extends AbstractGeometricalForm  {
 
-	private int x1, y1, x2, y2;
-	private Color color;
+	final private int x2, y2;
 
 	/**
 	 * Creates a line.
@@ -16,7 +15,12 @@ public class Line extends AbstractGeometricalForm  {
 	 * @param c the color.
 	 * @throws IllegalPositionException
 	 */
-	public Line(int x1, int y1, int x2, int y2, Color c) throws IllegalPositionException{}
+	public Line(int x1, int y1, int x2, int y2, Color c) throws IllegalPositionException{
+		super(x1,y1,Math.round(Math.round(Math.sqrt(Math.pow(x1- 2x2,2)+Math.pow(y1-y2,2)))),0,c);
+
+		this.x2=x2;
+		this.y2=y2;
+	}
 
 	/**
 	 * Creates a line at the position of a specified GeometricalForm.
@@ -25,7 +29,12 @@ public class Line extends AbstractGeometricalForm  {
 	 * @param c the color1.
 	 */
 	public Line(GeometricalForm f1, GeometricalForm f2, Color c){
+        super(f1,Math.round(Math.round(Math.sqrt(Math.pow(f1.getX()-f1.getY(),2)+Math.pow(f2.getX()-f2.getY(),2))))c);
 
+	}
+
+	public int getPerimeter(){
+		return getWidth()*2;
 	}
 
 
@@ -36,5 +45,9 @@ public class Line extends AbstractGeometricalForm  {
 	public void fill(Graphics g){
 
 	}
+
+    private int getLength(int x1,int y1,int x2,int y2){
+        return ;
+    }
 
 }
