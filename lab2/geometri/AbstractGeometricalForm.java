@@ -21,7 +21,7 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
         this(f.getX(),f.getY(),width,height,c);
     }
 
-        @Override
+    @Override
     public int compareTo(GeometricalForm f) {
         return 0;
     }

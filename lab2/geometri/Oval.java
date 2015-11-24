@@ -28,6 +28,10 @@ public class Oval extends AbstractGeometricalForm {
         super(f,width,height,c);
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPerimeter(){
         return Math.round(Math.round((Math.PI/2.0)*Math.sqrt(2*getHeight()*getHeight()+2*getWidth()+getWidth())));
     }
