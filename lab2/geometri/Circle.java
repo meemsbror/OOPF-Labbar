@@ -11,7 +11,7 @@ public class Circle extends Oval {
 	 * @param d the diameter.
 	 * @param c the color.
 	 */
-	public Circle(int x, int y, int d,Color c){
+	public Circle(int x, int y, int d,Color c)throws IllegalPositionException{
 		super(x,y,d,d,c);
 	}
 

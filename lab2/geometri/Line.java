@@ -16,7 +16,7 @@ public class Line extends AbstractGeometricalForm  {
 	 * @throws IllegalPositionException
 	 */
 	public Line(int x1, int y1, int x2, int y2, Color c) throws IllegalPositionException{
-		super(x1,y1,Math.round(Math.round(Math.sqrt(Math.pow(x1- 2x2,2)+Math.pow(y1-y2,2)))),0,c);
+		super(x1,y1,getLength(x1,y1,x2,y2),0,c);
 
 		this.x2=x2;
 		this.y2=y2;
@@ -28,8 +28,10 @@ public class Line extends AbstractGeometricalForm  {
 	 * @param f2 the GeometricalForm used for getting the end position.
 	 * @param c the color1.
 	 */
-	public Line(GeometricalForm f1, GeometricalForm f2, Color c){
-        super(f1,Math.round(Math.round(Math.sqrt(Math.pow(f1.getX()-f1.getY(),2)+Math.pow(f2.getX()-f2.getY(),2))))c);
+	public Line(AbstractGeometricalForm f1, GeometricalForm f2, Color c){
+        super(f1,getLength(f1.getX(),f1.getY(),f2.getX(),f2.getY()),0,c);
+        this.x2=f2.getX();
+        this.y2=f2.getY();
 
 	}
 
@@ -46,8 +48,8 @@ public class Line extends AbstractGeometricalForm  {
 
 	}
 
-    private int getLength(int x1,int y1,int x2,int y2){
-        return ;
+    private static int getLength(int x1,int y1,int x2,int y2){
+        return Math.round(Math.round(Math.sqrt(Math.pow(x1- x2,2)+Math.pow(y1-y2,2)))) ;
     }
 
 }
