@@ -24,7 +24,7 @@ public class Square extends Rectangle {
      * @param c the color of the Square.
      */
     public Square(GeometricalForm f, int side, Color c){
-        this(f.getX(),f.getY(),side,c);
+        super(f,side,side,c);
     }
 
 	public int getArea() {

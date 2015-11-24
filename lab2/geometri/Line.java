@@ -24,11 +24,17 @@ public class Line extends AbstractGeometricalForm  {
 	 * @param f2 the GeometricalForm used for getting the end position.
 	 * @param c the color1.
 	 */
-	public Line(GeometricalForm f1, GeometricalForm f2, Color c){}
+	public Line(GeometricalForm f1, GeometricalForm f2, Color c){
+
+	}
 
 
 	public int getArea() {
 		return 0;
+	}
+
+	public void fill(Graphics g){
+
 	}
 
 }

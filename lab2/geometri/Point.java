@@ -29,4 +29,8 @@ public class Point extends AbstractGeometricalForm {
 		return 0;
 	}
 
+    public void fill(Graphics g){
+
+    }
+
 }
