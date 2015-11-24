@@ -11,7 +11,6 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
     public void fill(Graphics g){
     }
     public Color getColor(){
-
         return Color.red;
     }
     public int getArea(){
@@ -48,4 +47,4 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
         return 0;
     }
 }
-}
+
