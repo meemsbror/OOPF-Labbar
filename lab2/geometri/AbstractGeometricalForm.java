@@ -21,7 +21,7 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
         this(f.getX(),f.getY(),width,height,c);
     }
 
-        @Override
+    @Override
     public int compareTo(GeometricalForm f) {
         return 0;
     }
@@ -72,13 +72,4 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
     public void place(int x, int y) throws IllegalPositionException{
 
     }
-
-	@Override
-	public boolean equals(Object o) {
-	}
-
-	@Override
-	public int hashCode() {
-	}
-
 }
