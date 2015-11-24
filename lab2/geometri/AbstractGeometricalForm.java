@@ -7,7 +7,7 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
     final private int x,y,width,height;
     final private Color color;
 
-    public AbstractGeometricalForm(int x, int y, int width, int height, Color c){
+    public AbstractGeometricalForm(int x, int y, int width, int height, Color c) throws IllegalPositionException{
 	    this.x=x;
         this.y=y;
         this.width=width;
@@ -46,6 +46,7 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
     }
 
     public void place(int x, int y) throws IllegalPositionException{
+
     }
 
     @Override
