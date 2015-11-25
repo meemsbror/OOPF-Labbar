@@ -40,7 +40,8 @@ public class Rectangle extends AbstractGeometricalForm {
 	}
 
     public void fill(Graphics g){
-
+        g.setColor(getColor());
+        g.fillRect(getX(),getY(),getWidth(),getHeight());
     }
 
 

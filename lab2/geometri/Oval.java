@@ -41,7 +41,8 @@ public class Oval extends AbstractGeometricalForm {
 	}
 
     public void fill(Graphics g){
-
+        g.setColor(getColor());
+        g.fillOval(getX(),getY(),getWidth(),getHeight());
     }
 
 }
