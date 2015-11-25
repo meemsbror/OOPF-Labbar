@@ -3,6 +3,7 @@ package geometri;
 import java.awt.*;
 import java.util.Objects;
 
+
 public class Point extends Line {
 
 
