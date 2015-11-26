@@ -23,7 +23,7 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
 
     }
 
-    public AbstractGeometricalForm(AbstractGeometricalForm f, int width, int height, Color c) {
+    public AbstractGeometricalForm(GeometricalForm f, int width, int height, Color c) {
         this.x=f.getX();
         this.y=f.getY();
         this.width=width;

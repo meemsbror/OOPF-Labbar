@@ -20,7 +20,7 @@ public class Point extends Line {
      * @param f a geometrical form
      * @param c the color of the point
      */
-    public Point(AbstractGeometricalForm f, Color c) {
+    public Point(GeometricalForm f, Color c) {
         super(f, f, c);
     }
 

@@ -23,7 +23,7 @@ public class Square extends Rectangle {
      * @param side the side.
      * @param c the color of the Square.
      */
-    public Square(AbstractGeometricalForm f, int side, Color c){
+    public Square(GeometricalForm f, int side, Color c){
         super(f,side,side,c);
     }
 }

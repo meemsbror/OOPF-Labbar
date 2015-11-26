@@ -28,7 +28,7 @@ public class Line extends AbstractGeometricalForm  {
 	 * @param f2 the GeometricalForm used for getting the end position.
 	 * @param c the color1.
 	 */
-	public Line(AbstractGeometricalForm f1, GeometricalForm f2, Color c){
+	public Line(GeometricalForm f1, GeometricalForm f2, Color c){
         super(f1,getLength(f1.getX(),f1.getY(),f2.getX(),f2.getY()),0,c);
         this.x2=f2.getX();
         this.y2=f2.getY();
