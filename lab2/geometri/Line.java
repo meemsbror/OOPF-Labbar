@@ -16,7 +16,11 @@ public class Line extends AbstractGeometricalForm  {
 	 * @throws IllegalPositionException
 	 */
 	public Line(int x1, int y1, int x2, int y2, Color c) throws IllegalPositionException{
-		super(x1, y1, x2 - x1, y2 - y1, c);
+		super(boxPosition(x1, x2), boxPosition(y1, y2), boxSides(x1, x2), boxSides(y1, y2), c);
+
+        if ((x1 < x2 && y1 < y2) || (x1 > x2 && y1 > y2)) {
+            lineStartTop = true;
+        }
 	}
 
 	/**
@@ -30,6 +34,20 @@ public class Line extends AbstractGeometricalForm  {
 
 	}
 
+    private static int boxPosition(int pos1, int pos2) {
+        if (pos1 < pos2) {
+            return pos1;
+        }
+        return pos2;
+    }
+
+    private static int boxSides(int side1, int side2) {
+        if (side1 - side2 < 0) {
+            return side2 - side1;
+        }
+        return side1 - side2;
+    }
+
 	public int getPerimeter(){
 		return getWidth()*2;
 	}
@@ -40,6 +58,7 @@ public class Line extends AbstractGeometricalForm  {
 	}
 
 	public void fill(Graphics g){
+
 	}
 
 
