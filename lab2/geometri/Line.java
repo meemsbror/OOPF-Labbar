@@ -18,9 +18,7 @@ public class Line extends AbstractGeometricalForm  {
 	public Line(int x1, int y1, int x2, int y2, Color c) throws IllegalPositionException{
 		super(boxPosition(x1, x2), boxPosition(y1, y2), boxSides(x1, x2), boxSides(y1, y2), c);
 
-        if ((x1 < x2 && y1 < y2) || (x1 > x2 && y1 > y2)) {
-            lineStartTop = true;
-        }
+        lineStartTop = ((x1 < x2 && y1 < y2) || (x1 > x2 && y1 > y2));
 	}
 
 	/**
@@ -31,10 +29,8 @@ public class Line extends AbstractGeometricalForm  {
 	 */
 	public Line(GeometricalForm f1, GeometricalForm f2, Color c) {
         super(f1, boxSides(f1.getX(), f2.getX()), boxSides(f1.getY(), f2.getY()), c);
+        lineStartTop = (f1.getX() < f2.getX() && f1.getY() < f2.getY()) || (f1.getX() > f2.getX() && f1.getY() > f2.getY());
 
-        if ((f1.getX() < f2.getX() && f1.getY() < f2.getY()) || (f1.getX() > f2.getX() && f1.getY() > f2.getY())) {
-            lineStartTop = true;
-        }
 	}
 
     private static int boxPosition(int pos1, int pos2) {
@@ -61,6 +57,12 @@ public class Line extends AbstractGeometricalForm  {
 	}
 
 	public void fill(Graphics g){
+        g.setColor(getColor());
+        if(lineStartTop){
+            g.drawLine(getX(),getY(),getX()+super.getWidth(),getY()+getHeight());
+        }else{
+            g.drawLine(getX(),getY()+super.getHeight(),getX()+getWidth(),getY());
+        }
 
 	}
 
