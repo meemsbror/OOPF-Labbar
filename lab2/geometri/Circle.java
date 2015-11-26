@@ -21,7 +21,7 @@ public class Circle extends Oval {
 	 * @param d the diameter.
 	 * @param c the color.
 	 */
-	public Circle(GeometricalForm f, int d, Color c) throws IllegalPositionException{
+	public Circle(GeometricalForm f, int d, Color c) {
 		super(f,d,d,c);
 	}
 

@@ -23,8 +23,12 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
 
     }
 
-    public AbstractGeometricalForm(GeometricalForm f, int width, int height, Color c)throws IllegalPositionException{
-        this(f.getX(), f.getY(), width, height, c);
+    public AbstractGeometricalForm(GeometricalForm f, int width, int height, Color c){
+        this.x=f.getX();
+        this.y=f.getY();
+        this.width=width;
+        this.height=height;
+        this.color = c;
     }
 
     @Override
