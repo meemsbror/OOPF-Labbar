@@ -20,7 +20,7 @@ public class Point extends Line {
      * @param f a geometrical form
      * @param c the color of the point
      */
-    public Point(GeometricalForm f, Color c) {
+    public Point(GeometricalForm f, Color c) throws IllegalPositionException {
         super(f, f, c);
     }
 

@@ -21,13 +21,13 @@ public class Circle extends Oval {
 	 * @param d the diameter.
 	 * @param c the color.
 	 */
-	public Circle(GeometricalForm f, int d, Color c){
+	public Circle(GeometricalForm f, int d, Color c) throws IllegalPositionException{
 		super(f,d,d,c);
 	}
 
 	@Override
 	public int getPerimeter(){
-		return(Math.round(Math.round(Math.PI*getHeight())));
+		return(Math.round(Math.round(Math.PI* Math.pow((getHeight() / 2), 2) )));
 	}
 
 }
