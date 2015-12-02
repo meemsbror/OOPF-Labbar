@@ -8,6 +8,7 @@ public class Point extends Line {
 
 
     /**
+     * Creates a point at the specified position.
      * @param x the x coordinate
      * @param y the y coordinate
      * @param c the color of the point
@@ -17,11 +18,11 @@ public class Point extends Line {
     }
 
     /**
+     * Creates a point at the specified position.
      * @param f a geometrical form
      * @param c the color of the point
      */
     public Point(GeometricalForm f, Color c){
         super(f, f, c);
     }
-
 }

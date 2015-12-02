@@ -29,8 +29,14 @@ public class Line extends AbstractGeometricalForm  {
 	 */
 	public Line(GeometricalForm f1, GeometricalForm f2, Color c) {
         super(f1, boxSides(f1.getX(), f2.getX()), boxSides(f1.getY(), f2.getY()), c);
+
         lineStartTop = (f1.getX() < f2.getX() && f1.getY() < f2.getY()) || (f1.getX() > f2.getX() && f1.getY() > f2.getY());
 
+		try {
+			place(boxPosition(f1.getX(), f2.getX()), boxPosition(f1.getY(), f2.getY()));
+		} catch (IllegalPositionException e) {
+			//Kommer inte hända eftersom f1 och f2 redan har testats i konstruktorn som tar in koordinater.
+		}
 	}
 
     private static int boxPosition(int pos1, int pos2) {
@@ -51,7 +57,6 @@ public class Line extends AbstractGeometricalForm  {
 		return getLength() * 2;
 	}
 
-
 	public int getArea() {
 		return 0;
 	}
@@ -59,15 +64,13 @@ public class Line extends AbstractGeometricalForm  {
 	public void fill(Graphics g){
         g.setColor(getColor());
         if(lineStartTop){
-            g.drawLine(getX(),getY(),getX()+super.getWidth(),getY()+getHeight());
+            g.drawLine(getX(),getY(),getX()+getWidth(),getY()+getHeight());
         }else{
-            g.drawLine(getX(),getY()+super.getHeight(),getX()+getWidth(),getY());
+            g.drawLine(getX(),getY()+getHeight(),getX()+getWidth(),getY());
         }
-
 	}
 
     private int getLength(){
-        return Math.round(Math.round(Math.sqrt(Math.pow(getWidth()- getX(), 2) + Math.pow(getHeight() - getY(), 2))));
+	    return Math.round(Math.round(Math.sqrt(Math.pow(getWidth(), 2) + Math.pow(getHeight(), 2))));
     }
-
 }

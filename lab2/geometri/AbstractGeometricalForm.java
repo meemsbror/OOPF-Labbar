@@ -36,15 +36,11 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
         if(f == null){
            throw new NullPointerException("the object was null");
         }
-        if(f instanceof GeometricalForm){
-            GeometricalForm that = (GeometricalForm)f;
-            if(this.getArea()-that.getArea()==0){
-                return this.getPerimeter()-that.getPerimeter();    
-            } 
-            return this.getArea()-that.getArea();
+
+	    if(this.getArea()-f.getArea()==0){
+            return this.getPerimeter()-f.getPerimeter();
         }
-        
-        throw new ClassCastException("Class was not a GeometricalForm");
+        return this.getArea()-f.getArea();
     }
 
     public Color getColor(){
@@ -62,9 +58,8 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
 
         AbstractGeometricalForm that = (AbstractGeometricalForm) o;
 
-        if (getWidth() != that.getWidth()) return false;
-        if (getHeight() != that.getHeight()) return false;
-        return getColor().equals(that.getColor());
+        if (getWidth() != that.getWidth() || getHeight() != that.getHeight()) return false;
+        return getColor().equals(that.getColor()) ;
     }
 
     @Override
@@ -76,9 +71,9 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
     }
 
     public int getWidth(){
-
         return width;
     }
+
     public int getX(){
         return x;
     }
@@ -98,6 +93,7 @@ public abstract class AbstractGeometricalForm implements GeometricalForm{
         this.x = x;
         this.y = y;
     }
+
     protected static boolean isIllegalPosition(int x, int y){
         return x<0||y<0;
     }

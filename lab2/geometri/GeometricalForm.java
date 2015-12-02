@@ -27,7 +27,8 @@ import java.awt.*;
 
 
         /**
-         * The method compareTo compares the area of the forms to decide if the given geometrical form is less or greater than this object. If they have the same area, the perimeter decides.
+         * The method compareTo compares the area of the forms to decide if the given geometrical form is less or greater
+         * than this object. If they have the same area, the perimeter decides.
          * @param f - The geometrical form to compare with.
          * @return An integer smaller than 0 if this form is smaller than the form given as argument, 0 if the sizes are equal, and a positive integer otherwise.
          */
