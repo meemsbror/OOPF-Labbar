@@ -1,7 +1,5 @@
 package orig2011.v3;
 
-import orig2011.v0.Position;
-
 public class GameUtils {
     /**
      * Set the tile on a specified position in the gameboard.
@@ -13,7 +11,7 @@ public class GameUtils {
      * @param gameBoardState
      *              The gameBoard to be changed
      */
-    public static void setGameboardState(final Position pos, final GameTile tile,final GameTile[][] gameBoardState){
+    public static void setGameboardState(final Position pos, final GameTile tile, final GameTile[][] gameBoardState){
         setGameboardState(pos.getX(), pos.getY(), tile,gameBoardState);
 
     }
@@ -30,7 +28,7 @@ public class GameUtils {
      * @param gameBoardState
      *            The gameBoard to be changed
      */
-    public static void setGameboardState(final int x,final int y,final GameTile tile, final GameTile[][] gameBoardState){
+    public static void setGameboardState(final int x, final int y, final GameTile tile, final GameTile[][] gameBoardState){
         gameBoardState[x][y]=tile;
     }
 
@@ -42,7 +40,7 @@ public class GameUtils {
      * @param gameBoardState
      *            The gameBoard
      */
-    public static GameTile getGameboardState(final Position pos, final GameTile [][] gameBoardState){
+    public static GameTile getGameboardState(final Position pos, final GameTile[][] gameBoardState){
         return getGameboardState(pos.getX(),pos.getY(),gameBoardState);
     }
 
@@ -56,7 +54,7 @@ public class GameUtils {
      * @param gameBoardState
      *            The gameBoard
      */
-    public static GameTile getGameboardState(final int x, final int y, final GameTile [][] gameBoardState){
+    public static GameTile getGameboardState(final int x, final int y, final GameTile[][] gameBoardState){
         return gameBoardState[x][y];
     }
 }

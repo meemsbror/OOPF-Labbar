@@ -1,7 +1,5 @@
 package orig2011.v3;
 
-import orig2011.v0.GameOverException;
-import orig2011.v0.Position;
 
 import java.awt.*;
 

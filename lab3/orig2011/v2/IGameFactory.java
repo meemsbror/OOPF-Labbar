@@ -1,7 +1,5 @@
 package orig2011.v2;
 
-import orig2011.v0.GameModel;
-
 /**
  * Factory interface for available games.
  */

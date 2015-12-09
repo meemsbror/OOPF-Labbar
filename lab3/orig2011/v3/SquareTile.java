@@ -16,7 +16,7 @@ public class SquareTile implements GameTile {
 	}
 
 	public SquareTile(final Color strokeColor, final Color fillColor,
-	                  final double thickness) {
+					  final double thickness) {
 		this.strokeColor = strokeColor;
 		this.fillColor = fillColor;
 		if (thickness > 0) {

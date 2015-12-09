@@ -1,5 +1,6 @@
 package orig2011.v3;
 
+
 import java.awt.*;
 
 /**
@@ -51,7 +52,7 @@ public class RoundTile implements GameTile {
 	 *            the thickness of the stroke.
 	 */
 	public RoundTile(final Color strokeColor, final Color fillColor,
-	                 final double thickness) {
+			final double thickness) {
 		this(strokeColor, fillColor, thickness, 1.0);
 	}
 
@@ -68,7 +69,7 @@ public class RoundTile implements GameTile {
 	 *            size of the circle relative to the tile size.
 	 */
 	public RoundTile(final Color strokeColor, final Color fillColor,
-	                 final double thickness, final double scale) {
+			final double thickness, final double scale) {
 		this.strokeColor = strokeColor;
 		this.fillColor = fillColor;
 		this.stroke = new BasicStroke((float) thickness);
