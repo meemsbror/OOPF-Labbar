@@ -27,7 +27,6 @@ public class Rectangle extends AbstractGeometricalForm {
      * @param c the color of the Square.
      */
     public Rectangle(GeometricalForm f,int width,int height, Color c){
-
         super(f, width, height, c);
     }
 
@@ -44,5 +43,11 @@ public class Rectangle extends AbstractGeometricalForm {
         g.fillRect(getX(),getY(),getWidth(),getHeight());
     }
 
-
+	/**
+	 * Checks if the rectangle is a square.
+	 * @return getHeight() == getWidth()
+	 */
+	public boolean isSquare(){
+		return getHeight() == getWidth();
+	}
 }

@@ -30,4 +30,11 @@ public class Circle extends Oval {
 		return(Math.round(Math.round(Math.PI* Math.pow((getHeight() / 2), 2) )));
 	}
 
+	/**
+	 * Returns the radius of the circle.
+	 * @return the radius
+	 */
+	public int getRadius(){
+		return Math.round(Math.round(getHeight() / 2.0));
+	}
 }
