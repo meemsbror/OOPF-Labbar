@@ -1,8 +1,5 @@
 package orig2011.v5;
 
-import orig2011.v0.Constants;
-import orig2011.v0.GameModel;
-import orig2011.v0.GameTile;
 
 import javax.swing.*;
 import java.awt.*;

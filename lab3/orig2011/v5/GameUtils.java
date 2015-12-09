@@ -1,8 +1,5 @@
 package orig2011.v5;
 
-import orig2011.v0.Position;
-import orig2011.v3.GameTile;
-
 public class GameUtils {
     /**
      * Set the tile on a specified position in the gameboard.

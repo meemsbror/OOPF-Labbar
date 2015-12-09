@@ -1,8 +1,5 @@
 package orig2011.v5;
 
-import orig2011.v0.GameModel;
-import orig2011.v0.GameOverException;
-import orig2011.v0.GameView;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;

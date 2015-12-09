@@ -1,7 +1,5 @@
 package orig2011.v5;
 
-import orig2011.v3.GameTile;
-
 import java.awt.*;
 
 public class CrossTile implements GameTile {

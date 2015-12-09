@@ -1,12 +1,5 @@
 package orig2011.v5;
 
-import orig2011.v0.Constants;
-import orig2011.v0.GameOverException;
-import orig2011.v0.Position;
-import orig2011.v3.BlankTile;
-import orig2011.v3.GameUtils;
-import orig2011.v4.GameModel;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeListener;

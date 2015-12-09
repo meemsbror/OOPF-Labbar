@@ -1,10 +1,5 @@
 package orig2011.v5;
 
-import orig2011.v0.GameController;
-import orig2011.v0.GameModel;
-import orig2011.v0.GameView;
-import orig2011.v0.IGameFactory;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

@@ -1,10 +1,5 @@
 package orig2011.v5;
 
-import orig2011.v0.GameOverException;
-import orig2011.v0.Position;
-import orig2011.v3.GameTile;
-import orig2011.v4.IObservable;
-
 import java.awt.*;
 
 /**
