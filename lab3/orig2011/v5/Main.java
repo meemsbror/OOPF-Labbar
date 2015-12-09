@@ -1,6 +1,5 @@
 package orig2011.v5;
 
-import orig2011.v0.GUIView;
 import orig2011.v2.ReversiFactory;
 
 import javax.swing.*;
