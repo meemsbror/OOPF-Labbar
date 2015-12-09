@@ -1,8 +1,6 @@
 package orig2011.v3;
 
 import orig2011.v0.*;
-import orig2011.v2.GameModel;
-import orig2011.v2.GameUtils;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;

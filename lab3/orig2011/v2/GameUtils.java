@@ -2,7 +2,7 @@ package orig2011.v2;
 
 
 import orig2011.v0.Constants;
-import orig2011.v3.GameTile;
+import orig2011.v0.GameTile;
 import orig2011.v0.Position;
 
 import java.awt.*;
