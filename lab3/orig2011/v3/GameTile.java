@@ -22,7 +22,7 @@ public interface GameTile {
 	 * @param d
 	 *            size of this object in pixels.
 	 */
-	void draw(Graphics g, int x, int y, Dimension d)
+	void draw(Graphics g, int x, int y, Dimension d);
 
 }
 
