@@ -14,14 +14,14 @@ import java.awt.*;
  * game-dependent fields.
  */
 public interface  GameModel {
-	
+
 	/**
 	 * Returns the GameTile in logical position (x,y) of the gameboard.
 	 * 
 	 * @param pos
 	 *            The position in the gameboard matrix.
 	 */
-	public GameTile getGameboardState(final Position pos) ;
+    GameTile getGameboardState(final Position pos) ;
 
 	/**
 	 * Returns the GameTile in logical position (x,y) of the gameboard.
@@ -31,12 +31,12 @@ public interface  GameModel {
 	 * @param y
 	 *            Coordinate in the gameboard matrix.
 	 */
-	public GameTile getGameboardState(final int x, final int y);
+    GameTile getGameboardState(final int x, final int y);
 
 	/**
 	 * Returns the size of the gameboard.
 	 */
-	public Dimension getGameboardSize();
+    Dimension getGameboardSize();
 
 	/**
 	 * This method is called repeatedly so that the game can update it's state.
@@ -44,5 +44,5 @@ public interface  GameModel {
 	 * @param lastKey
 	 *            The most recent keystroke.
 	 */
-	public abstract void gameUpdate(int lastKey) throws GameOverException;
+    void gameUpdate(int lastKey) throws GameOverException;
 }
