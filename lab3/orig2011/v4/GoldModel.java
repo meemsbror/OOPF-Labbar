@@ -268,7 +268,7 @@ public class GoldModel implements GameModel {
 
 	/**
 	 * Adds an observer to the PropertyChangeListener.
-	 * @param observer
+	 * @param observer the observing view
 	 */
 	public void addObserver(PropertyChangeListener observer){
 		propertyChanger.addPropertyChangeListener(observer);
@@ -276,7 +276,7 @@ public class GoldModel implements GameModel {
 
 	/**
 	 * Removes an observer from the PropertyChangeListener.
-	 * @param observer
+	 * @param observer the observing view
 	 */
 	public void removeObserver(PropertyChangeListener observer){
 		propertyChanger.removePropertyChangeListener(observer);
