@@ -183,7 +183,11 @@ public class GoldModel implements GameModel {
 	 *            The position in the gameboard matrix.
 	 */
 	public GameTile getGameboardState(final Position pos){
+<<<<<<< HEAD
 		return getGameboardState(pos.getX(), pos.getY());
+=======
+		return GameUtils.getGameboardState(pos,gameboardState);
+>>>>>>> 1a6ba25753b61c5a515cf661572bd53e43e45fef
 	}
 
 	/**
@@ -195,7 +199,7 @@ public class GoldModel implements GameModel {
 	 *            Coordinate in the gameboard matrix.
 	 */
 	public GameTile getGameboardState(final int x, final int y){
-		return this.gameboardState[x][y];
+		return GameUtils.getGameboardState(x, y, gameboardState);
 	}
 
 	/**
@@ -256,5 +260,7 @@ public class GoldModel implements GameModel {
 		return pos.getX() < 0 || pos.getX() >= getGameboardSize().width
 				|| pos.getY() < 0 || pos.getY() >= getGameboardSize().height;
 	}
+
+
 
 }
