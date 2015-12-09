@@ -112,6 +112,7 @@ public class ReversiModel implements GameModel {
 		for (int i = 0; i < this.width; i++) {
 			for (int j = 0; j < this.height; j++) {
 				GameUtils.setGameboardState(i, j, blankTile, gameboardState);
+				propertyChanger.firePropertyChange("tile", null, new Position(i, j));
 				this.board[i][j] = PieceColor.EMPTY;
 			}
 		}
@@ -123,12 +124,18 @@ public class ReversiModel implements GameModel {
 		int midY = this.height / 2 - 1;
 		this.board[midX][midY] = PieceColor.WHITE;
 		GameUtils.setGameboardState(midX, midY, whiteGridTile, gameboardState);
+		propertyChanger.firePropertyChange("tile", null, new Position(midX, midY));
 		this.board[midX + 1][midY + 1] = PieceColor.WHITE;
 		GameUtils.setGameboardState(midX + 1, midY + 1, whiteGridTile, gameboardState);
+		propertyChanger.firePropertyChange("tile", null, new Position(midX + 1, midY + 1));
 		this.board[midX + 1][midY] = PieceColor.BLACK;
 		GameUtils.setGameboardState(midX + 1, midY, blackGridTile, gameboardState);
+		propertyChanger.firePropertyChange("tile", null, new Position(midX + 1, midY));
+
 		this.board[midX][midY + 1] = PieceColor.BLACK;
 		GameUtils.setGameboardState(midX, midY + 1, blackGridTile, gameboardState);
+		propertyChanger.firePropertyChange("tile", null, new Position(midX, midY + 1));
+
 
 		// Set the initial score.
 		this.whiteScore = 2;
@@ -219,9 +226,8 @@ public class ReversiModel implements GameModel {
 				turnOver(this.turn, this.cursorPos);
 				GameUtils.setGameboardState(this.cursorPos, t, gameboardState);
 
-                propertyChanger.firePropertyChange("Tile", null, cursorPos);
-
-                this.board[this.cursorPos.getX()][this.cursorPos.getY()] =
+				propertyChanger.firePropertyChange("tile", null, this.cursorPos);
+				this.board[this.cursorPos.getX()][this.cursorPos.getY()] =
 						(this.turn == Turn.BLACK
 								? PieceColor.BLACK
 								: PieceColor.WHITE);
@@ -272,9 +278,10 @@ public class ReversiModel implements GameModel {
 							GameUtils.setGameboardState(x, y,
 									myColor == PieceColor.BLACK ? blackGridTile
 											: whiteGridTile, gameboardState);
-                            propertyChanger.firePropertyChange("Tile", null, new Position (x, y));
 
-                            x -= xDelta;
+							propertyChanger.firePropertyChange("tile", null, new Position(x, y));
+
+							x -= xDelta;
 							y -= yDelta;
 							this.blackScore += blackResult;
 							this.whiteScore += whiteResult;
@@ -401,6 +408,7 @@ public class ReversiModel implements GameModel {
 					c.getTop() == cursorWhiteTile ||
 					c.getTop() == cursorBlackTile) {
 				GameUtils.setGameboardState(oldCursorPos, c.getBottom(), gameboardState);
+
 			}
 		}
 	}
@@ -422,7 +430,7 @@ public class ReversiModel implements GameModel {
 
 	/**
 	 * Adds an observer to the PropertyChangeListener.
-	 * @param observer
+	 * @param observer the observing view
 	 */
 	public void addObserver(PropertyChangeListener observer){
 		propertyChanger.addPropertyChangeListener(observer);
@@ -430,7 +438,7 @@ public class ReversiModel implements GameModel {
 
 	/**
 	 * Removes an observer from the PropertyChangeListener.
-	 * @param observer
+	 * @param observer the observing view
 	 */
 	public void removeObserver(PropertyChangeListener observer){
 		propertyChanger.removePropertyChangeListener(observer);
