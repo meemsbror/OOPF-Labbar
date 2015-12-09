@@ -182,8 +182,8 @@ public class GoldModel implements GameModel {
 	 * @param pos
 	 *            The position in the gameboard matrix.
 	 */
-	public GameTile getGameBoardState(final Position pos){
-		return getGameboardState(pos.getX(), pos.getY());
+	public GameTile getGameboardState(final Position pos){
+		return GameUtils.getGameboardState(pos,gameboardState);
 	}
 
 	/**
@@ -195,7 +195,7 @@ public class GoldModel implements GameModel {
 	 *            Coordinate in the gameboard matrix.
 	 */
 	public GameTile getGameboardState(final int x, final int y){
-		return this.gameboardState[x][y];
+		return GameUtils.getGameboardState(x, y, gameboardState);
 	}
 
 	/**
@@ -240,7 +240,7 @@ public class GoldModel implements GameModel {
 		// Remove one of the coins
 		Position oldCoinPos = this.coins.get(0);
 		this.coins.remove(0);
-		GameUtils.gisetGameboardState(oldCoinPos, BLANK_TILE, gameboardState);
+		GameUtils.setGameboardState(oldCoinPos, BLANK_TILE, gameboardState);
 
 		// Add a new coin (simulating moving one coin)
 		addCoin();
@@ -256,5 +256,7 @@ public class GoldModel implements GameModel {
 		return pos.getX() < 0 || pos.getX() >= getGameboardSize().width
 				|| pos.getY() < 0 || pos.getY() >= getGameboardSize().height;
 	}
+
+
 
 }
