@@ -11,6 +11,7 @@ import orig2011.v3.CompositeTile;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 
 /**
  * A somewhat defective implementation of the game Reversi. The purpose
@@ -66,6 +67,8 @@ public class ReversiModel implements GameModel {
 			return t == BLACK ? WHITE : BLACK;
 		}
 	}
+
+	private final PropertyChangeSupport propertyChanger = new PropertyChangeSupport(this);
 
 	private final GameTile[][] gameboardState;
 
@@ -375,7 +378,6 @@ public class ReversiModel implements GameModel {
 							0,
 							Math.min(nextCursorPos.getY(), boardSize.height - 1));
 			nextCursorPos = new Position(nextX, nextY);
-			removeCursor(this.cursorPos);
 			this.cursorPos = nextCursorPos;
 			updateCursor();
 		} else {
@@ -411,13 +413,20 @@ public class ReversiModel implements GameModel {
 		GameUtils.setGameboardState(this.cursorPos, cursoredTile, gameboardState);
 	}
 
+	/**
+	 * Adds an observer to the PropertyChangeListener.
+	 * @param observer
+	 */
 	public void addObserver(PropertyChangeListener observer){
-
+		propertyChanger.addPropertyChangeListener(observer);
 	}
 
-
+	/**
+	 * Removes an observer from the PropertyChangeListener.
+	 * @param observer
+	 */
 	public void removeObserver(PropertyChangeListener observer){
-
+		propertyChanger.removePropertyChangeListener(observer);
 	}
 
 }

@@ -9,6 +9,7 @@ import orig2011.v3.GameUtils;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +47,8 @@ public class GoldModel implements GameModel {
 			return this.yDelta;
 		}
 	}
+
+	private final PropertyChangeSupport propertyChanger = new PropertyChangeSupport(this);
 
 	private final orig2011.v3.GameTile[][] gameboardState;
 
@@ -219,6 +222,7 @@ public class GoldModel implements GameModel {
 	 */
 	@Override
 	public void gameUpdate(final int lastKey) throws GameOverException {
+
 		updateDirection(lastKey);
 
 		// Erase the previous position.
@@ -262,13 +266,20 @@ public class GoldModel implements GameModel {
 				|| pos.getY() < 0 || pos.getY() >= getGameboardSize().height;
 	}
 
+	/**
+	 * Adds an observer to the PropertyChangeListener.
+	 * @param observer
+	 */
 	public void addObserver(PropertyChangeListener observer){
-		
+		propertyChanger.addPropertyChangeListener(observer);
 	}
 
-
+	/**
+	 * Removes an observer from the PropertyChangeListener.
+	 * @param observer
+	 */
 	public void removeObserver(PropertyChangeListener observer){
-
+		propertyChanger.removePropertyChangeListener(observer);
 	}
 
 }
