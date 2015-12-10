@@ -19,6 +19,9 @@ public class GameController implements Runnable {
 	/** The game model describes the running game. */
 	private GameModel gameModel;
 
+	/** The timeout interval between each update. (millis) */
+	private final int updateInterval;
+
 	/** True when game is running. */
 	private boolean isRunning;
 
@@ -47,6 +50,7 @@ public class GameController implements Runnable {
 		this.gameModel = null;
 		this.isRunning = false;
 		this.keypresses = new LinkedList<Integer>();
+		this.updateInterval = 150;
 
 		this.gameThread = null;
 
