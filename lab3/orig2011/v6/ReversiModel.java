@@ -64,6 +64,8 @@ public class ReversiModel implements GameModel {
 
 	private final PropertyChangeSupport propertyChanger = new PropertyChangeSupport(this);
 
+	private final int updateInterval = 7;
+
 	/** Graphical representation of a coin. */
 	private static final GameTile blackTile = new RoundTile(Color.BLACK,
 			Color.BLACK, 1.0, 0.8);
@@ -401,6 +403,10 @@ public class ReversiModel implements GameModel {
 
 	public void removeObserver(PropertyChangeListener observer) {
 		propertyChanger.removePropertyChangeListener(observer);
+	}
+
+	public int getUpdateSpeed(){
+		return updateInterval;
 	}
 
 }

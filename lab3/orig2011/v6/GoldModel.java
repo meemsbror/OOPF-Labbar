@@ -48,6 +48,8 @@ public class GoldModel implements GameModel {
 
 	private static final int COIN_START_AMOUNT = 20;
 
+	private final int updateInterval = 150;
+
 	/*
 	 * The following GameTile objects are used only
 	 * to describe how to paint the specified item.
@@ -255,6 +257,8 @@ public class GoldModel implements GameModel {
 
 	}
 
-
+	public int getUpdateSpeed(){
+		return updateInterval;
+	}
 
 }
