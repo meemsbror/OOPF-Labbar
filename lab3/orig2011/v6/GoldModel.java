@@ -1,7 +1,9 @@
-package orig2011.v3;
+package orig2011.v6;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +43,8 @@ public class GoldModel implements GameModel {
 	}
 
 	private final Dimension gameboardSize = Constants.getGameSize();
+
+	private final PropertyChangeSupport propertyChanger = new PropertyChangeSupport(this);
 
 	private static final int COIN_START_AMOUNT = 20;
 
@@ -228,6 +232,7 @@ public class GoldModel implements GameModel {
 		// Add a new coin (simulating moving one coin)
 		addCoin();
 
+		propertyChanger.firePropertyChange("a", collectorPos, getNextCollectorPos());
 	}
 
 	/**
@@ -238,6 +243,16 @@ public class GoldModel implements GameModel {
 	private boolean isOutOfBounds(Position pos) {
 		return pos.getX() < 0 || pos.getX() >= getGameboardSize().width
 				|| pos.getY() < 0 || pos.getY() >= getGameboardSize().height;
+	}
+
+
+	public void addObserver(PropertyChangeListener observer){
+		propertyChanger.addPropertyChangeListener(observer);
+	}
+
+	public void removeObserver(PropertyChangeListener observer){
+		propertyChanger.removePropertyChangeListener(observer);
+
 	}
 
 

@@ -232,7 +232,7 @@ public class GoldModel implements GameModel {
 		// Add a new coin (simulating moving one coin)
 		addCoin();
 
-		propertyChanger.firePropertyChange("a", null, null);
+		propertyChanger.firePropertyChange("a", collectorPos, getNextCollectorPos());
 	}
 
 	/**
