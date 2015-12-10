@@ -157,7 +157,7 @@ public class GameController implements Runnable {
 
 				//this.view.repaint();
 
-				Thread.sleep(this.updateInterval);
+				Thread.sleep();
 			} catch (GameOverException e) {
 				// we got a game over signal, time to exit...
 				// The current implementation ignores the game score
