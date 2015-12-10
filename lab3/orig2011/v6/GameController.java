@@ -1,4 +1,4 @@
-package orig2011.v5;
+package orig2011.v6;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -18,6 +18,9 @@ public class GameController implements Runnable {
 
 	/** The game model describes the running game. */
 	private GameModel gameModel;
+
+	/** The timeout interval between each update. (millis) */
+	private final int updateInterval;
 
 	/** True when game is running. */
 	private boolean isRunning;
@@ -46,6 +49,8 @@ public class GameController implements Runnable {
 		this.view = view;
 		this.gameModel = null;
 		this.isRunning = false;
+		this.updateInterval = 150;
+
 		this.keypresses = new LinkedList<Integer>();
 
 		this.gameThread = null;
