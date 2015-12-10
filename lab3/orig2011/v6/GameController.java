@@ -46,6 +46,7 @@ public class GameController implements Runnable {
 		this.view = view;
 		this.gameModel = null;
 		this.isRunning = false;
+
 		this.keypresses = new LinkedList<Integer>();
 
 		this.gameThread = null;
