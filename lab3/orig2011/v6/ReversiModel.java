@@ -64,7 +64,7 @@ public class ReversiModel implements GameModel {
 
 	private final PropertyChangeSupport propertyChanger = new PropertyChangeSupport(this);
 
-	private final int updateInterval = -2;
+	private final int updateInterval = -1;
 
 	/** Graphical representation of a coin. */
 	private static final GameTile blackTile = new RoundTile(Color.BLACK,
@@ -394,7 +394,7 @@ public class ReversiModel implements GameModel {
 		} else {
 			throw new GameOverException(this.blackScore - this.whiteScore);
 		}
-		propertyChanger.firePropertyChange("a", null, null);
+		propertyChanger.firePropertyChange("", null, null);
 	}
 
 	public void addObserver(PropertyChangeListener observer){

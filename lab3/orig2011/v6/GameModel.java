@@ -44,7 +44,8 @@ public interface GameModel extends IObservable {
     void gameUpdate(int lastKey) throws GameOverException;
 
 	/**
-	 * Returns the updatespeed in milliseconds.
+	 * Returns the updatespeed in milliseconds, a negative value should be set for the game to only update when a key
+     * is pressed.
 	 * @return updatespeed
 	 */
 	int getUpdateSpeed();

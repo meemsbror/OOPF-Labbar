@@ -66,7 +66,7 @@ public class GameController implements Runnable {
 	 * Add a key press to the end of the queue
 	 */
 	private synchronized void enqueueKeyPress(final int key) {
-		if(this.gameModel.getUpdateSpeed()<0){
+		if(this.gameModel.getUpdateSpeed() < 0 && this.isRunning){
             try {
                 this.gameModel.gameUpdate(Integer.valueOf(key));
             } catch (GameOverException e) {
@@ -74,9 +74,10 @@ public class GameController implements Runnable {
                 // The current implementation ignores the game score
                 this.isRunning = false;
                 System.out.println("Game over: " + e.getScore());
-            }
-        }
-        this.keypresses.add(Integer.valueOf(key));
+			}
+        } else {
+			this.keypresses.add(Integer.valueOf(key));
+		}
 	}
 
 	/**
@@ -119,9 +120,11 @@ public class GameController implements Runnable {
 		this.gameModel.addObserver(this.view);
 
 
-		// Create the new thread and start it...
-		this.gameThread = new Thread(this);
-		this.gameThread.start();
+		// Create the new thread. If UpdateSpeed < 0 enqueueKeyPress() updates the controller.
+		if (this.gameModel.getUpdateSpeed() >= 0) {
+			this.gameThread = new Thread(this);
+			this.gameThread.start();
+		}
 	}
 
 	/**
@@ -141,6 +144,9 @@ public class GameController implements Runnable {
 
 		// Stop listening for events
 		this.view.removeKeyListener(this.keyListener);
+
+		// Clears the list of keypresses
+		this.keypresses.clear();
 
 		// Make sure we wait until the thread has stopped...
 		if (this.gameThread != null) {
@@ -166,9 +172,8 @@ public class GameController implements Runnable {
 				// or 0 if no new keypress since last update.
 				this.gameModel.gameUpdate(nextKeyPress());
 
-				//this.view.repaint();
-
 				Thread.sleep(this.gameModel.getUpdateSpeed());
+
 			} catch (GameOverException e) {
 				// we got a game over signal, time to exit...
 				// The current implementation ignores the game score
