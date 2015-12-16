@@ -8,7 +8,6 @@ import javax.swing.*;
  */
 public class Main {
 	public static void main(final String[] args) {
-		System.out.println("hej");
 		// Create a new frame (a window)
 		JFrame frame = new JFrame();
 
